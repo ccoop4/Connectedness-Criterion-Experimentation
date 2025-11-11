@@ -2,7 +2,10 @@
 
 Start by downloading networks.zip from https://databank.illinois.edu/datasets/IDB-3284069 and unzip the files into a folder called EC-SBM-Networks. You may insert other test networks into this folder, but the script is designed so that one may choose a dataset and an input clustering method and retrieve the correct EC-SBM network from this folder. Note that you should not have a "networks" folder inside the EC-SBM-Networks folder; that folder should become EC-SBM-Networks.
 
-Next, run install-relevant-repos.sh. This will pull all relevant code needed for clustering, WCC postprocessing, and accuracy measurement.
+Next, run install-relevant-repos.sh. This will pull all relevant code needed for clustering, WCC postprocessing, and accuracy measurement. Also, here are the links directly.
+- https://github.com/illinois-or-research-analytics/network-analysis-code
+- https://github.com/illinois-or-research-analytics/network_evaluation
+- https://github.com/MinhyukPark/constrained-clustering
 
 There are four Python scripts that are intended to be run sequentially but may be run individually.
 
