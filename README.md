@@ -41,6 +41,23 @@ There are four Python scripts that are intended to be run sequentially but may b
 
    WCC outputs will be written to  
    `./wcc-networks/<control>/<dataset>/<dataset>_<base>_<criterion>.tsv`
+3. **get-accuracy.py**  
+   This script will compute many accuracy statistics for a specified control + WCC treatment method (treating the original EC-SBM as the ground truth). This script can either compute the global or local (only consider nodes in the WCC clustering) accuracy statistics.
 
-3. get-accuracy.py
-4. plot-accuracy.py
+   **The script takes in the following arguments:**
+   - `--dataset <string>` - (required) same as above
+   - `--base <string>` - (required) same as above
+   - `--control-method <string>` - (required) same as above
+   - `--control-resolution <float>` - (optional) same as above
+   - `--num-processors <int>` - (optional) default = 1
+   - `--local` - (optional) use this flag if you want to get the local accuracy
+   - `--overwrite` - overwrites existing file outputs
+   - `--accuracy-script <path>` - (optional) defaults to `outside_repos/network_evaluation/commdet_acc/compute_cd_accuracy.py`
+
+   **Output:**  
+   Accuracy outputs will be written to  
+   `./accuracy_stats/<dataset>_<base>_<control-method>/<criterion>{_local (if local)}.<metric>`
+
+ 
+5. 
+6. plot-accuracy.py
