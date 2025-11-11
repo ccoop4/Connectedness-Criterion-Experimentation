@@ -25,22 +25,22 @@ There are four Python scripts that are intended to be run sequentially but may b
    `./wcc-networks/<method>/<dataset>/<dataset>_<base>_control.tsv`
    
 2. wcc-postprocess.py
-The purpose of this script is to apply different WCC treatments to a control network generated via the previous script. The differences in the WCC treatments come down to the criterion used to determine well-connectedness. These can be specified in a list. Right now, there is no upper bound as to the amount you are able to test. They must be formatted in one of the following ways: `"C"`, `"Cn^k"`, `"Clog_b(n)"`, where C, b are integers and k is a float.
+   The purpose of this script is to apply different WCC treatments to a control network generated via the previous script. The differences in the WCC treatments come down to the criterion used to determine well-connectedness. These can be specified in a list. Right now, there is no upper bound as to the amount you are able to test. They must be formatted in one of the following ways: `"C"`, `"Cn^k"`, `"Clog_b(n)"`, where C, b are integers and k is a float.
 
-**The script takes in the following arguments:**
+   **The script takes in the following arguments:**
+   
+   - `--dataset <string>` - (required) same as above
+   - `--base <string>` - (required) same as above
+   - `--control-method <string>` - (required) specifies which control method we should apply WCC to
+   - `--control-resolution <float>` - (optional) use if you use leiden-cpm as the control method
+   - `--criteria <string> <string> ...` - (required) list of strings corresponding to the criterion you want to test
+   - `--num-processors <int>` - (optional) default = 1
+   - `--overwrite` (optional) overwrites existing file outputs
+   
+     **Output:**  
 
-- `--dataset <string>` - (required) same as above
-- `--base <string>` - (required) same as above
-- `--control-method <string>` - (required) specifies which control method we should apply WCC to
-- `--control-resolution <float>` - (optional) use if you use leiden-cpm as the control method
-- `--criteria <string> <string> ...` - (required) list of strings corresponding to the criterion you want to test
-- `--num-processors <int>` - (optional) default = 1
-- `--overwrite` (optional) overwrites existing file outputs
-
-  **Output:**  
-
-WCC outputs will be written to  
-`./wcc-networks/<control>/<dataset>/<dataset>_<base>_<criterion>.tsv`
+   WCC outputs will be written to  
+   `./wcc-networks/<control>/<dataset>/<dataset>_<base>_<criterion>.tsv`
 
 3. get-accuracy.py
 4. plot-accuracy.py
