@@ -57,7 +57,18 @@ There are four Python scripts that are intended to be run sequentially but may b
    **Output:**  
    Accuracy outputs will be written to  
    `./accuracy_stats/<dataset>_<base>_<control-method>/<criterion>{_local (if local)}.<metric>`
+4. **plot-accuracy.py**  
+   This script will generate stacked bar charts for AMI, ARI, NMI, Precision, and Recall for a specified base-clustering/control-method pair. Each bar in each bar chart represents a different connectedness criterion.
+   
+   **The script takes in the following arguments:**
+   - `--dataset <string>` - (required) same as above
+   - `--base <string>` - (required) same as above
+   - `--control-method <string>` - (required) You must include the resolution for `leiden-cpm` in this case. It must match the folder you are trying to pull the accuracy stats from.
+   - `--local` - (optional) use this if you want to use the local accuracy stats, note that they must have been previously generated
+   - `--output <path>` - (optional) defaults to `./plots/<dataset>_<base>_<control-method>.png`
+   
+   **Output:**  
+   Plot outputs will be written to  
+   `./plots/<dataset>_<base>_<control-method>.png`
 
- 
-5. 
-6. plot-accuracy.py
+
